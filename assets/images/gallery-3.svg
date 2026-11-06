@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="g3Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="45%" stop-color="#F5EEF8"/>
+      <stop offset="100%" stop-color="#E8D7F1"/>
+    </linearGradient>
+    <linearGradient id="g3Gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEAB4"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#A8841B"/>
+    </linearGradient>
+    <linearGradient id="g3Lavender" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8C8DC"/>
+      <stop offset="40%" stop-color="#CDB4DB"/>
+      <stop offset="100%" stop-color="#7B4B94"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#g3Bg)" rx="32"/>
+  <rect x="24" y="24" width="752" height="952" rx="24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.4" stroke-dasharray="8 6"/>
+
+  <!-- Ornate Botanical Archway Backdrop -->
+  <ellipse cx="400" cy="480" rx="250" ry="340" fill="#FFFFFF" fill-opacity="0.7" stroke="url(#g3Gold)" stroke-width="2"/>
+  <ellipse cx="400" cy="480" rx="230" ry="320" fill="none" stroke="#CDB4DB" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- Haute Couture Floral Gown Centerpiece -->
+  <g transform="translate(400, 480)">
+    <!-- Slender Mannequin Neck & Torso -->
+    <path d="M -15 -210 L 15 -210 L 25 -160 C 25 -120, 15 -90, 0 -70 C -15 -90, -25 -120, -25 -160 Z" fill="#FFF2E6" stroke="#D4AF37" stroke-width="2"/>
+    <circle cx="0" cy="-235" r="16" fill="url(#g3Gold)"/>
+
+    <!-- Pearl Choker Necklace -->
+    <path d="M -18 -180 Q 0 -165 18 -180" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <path d="M -18 -180 Q 0 -165 18 -180" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <!-- Corset Bodice Embroidered with Delicate Jasmine Buds -->
+    <path d="M -25 -160 C -15 -100, -20 -70, 0 -60 C 20 -70, 15 -100, 25 -160 Z" fill="#E75480" opacity="0.85"/>
+    <circle cx="-8" cy="-120" r="4" fill="#FFF"/>
+    <circle cx="8" cy="-120" r="4" fill="#FFF"/>
+    <circle cx="0" cy="-90" r="4.5" fill="#D4AF37"/>
+
+    <!-- Cascading Ballgown Skirt Made Entirely of Petals & Blossoms -->
+    <!-- Tier 1: Rose Petals Top Tier -->
+    <path d="M 0 -60 C -60 -40, -110 30, -130 90 C -60 110, 60 110, 130 90 C 110 30, 60 -40, 0 -60 Z" fill="#F8C8DC" stroke="#E75480" stroke-width="2"/>
+    <!-- Tier 2: Lavender & Wisteria Swags -->
+    <path d="M -130 90 C -170 160, -190 220, -200 270 C -100 300, 100 300, 200 270 C 190 220, 170 160, 130 90 Z" fill="url(#g3Lavender)" stroke="#7B4B94" stroke-width="2"/>
+
+    <!-- Tier 3: Bottom Scalloped Floral Ruffles -->
+    <path d="M -200 270 Q -150 290 -100 280 Q -50 300 0 280 Q 50 300 100 280 Q 150 290 200 270 C 180 320, -180 320, -200 270 Z" fill="#FFFFFF" opacity="0.9" stroke="#D4AF37" stroke-width="2"/>
+
+    <!-- Cascading Wisteria Vines Draping Off the Skirt -->
+    <g fill="#A8325E" opacity="0.85">
+      <!-- Left drape -->
+      <circle cx="-140" cy="180" r="7"/>
+      <circle cx="-148" cy="205" r="6"/>
+      <circle cx="-152" cy="228" r="5"/>
+      <circle cx="-155" cy="248" r="4"/>
+      <!-- Right drape -->
+      <circle cx="140" cy="180" r="7"/>
+      <circle cx="148" cy="205" r="6"/>
+      <circle cx="152" cy="228" r="5"/>
+      <circle cx="155" cy="248" r="4"/>
+    </g>
+
+    <!-- Golden Waist Ribbon & Bow -->
+    <path d="M -30 -60 Q 0 -50 30 -60" stroke="url(#g3Gold)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-55" rx="14" ry="10" fill="url(#g3Gold)"/>
+    <circle cx="0" cy="-55" r="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Floating Sparkles & Soft Petals -->
+  <g fill="#D4AF37">
+    <circle cx="180" cy="250" r="4"/>
+    <circle cx="620" cy="270" r="5"/>
+    <circle cx="160" cy="650" r="5"/>
+    <circle cx="640" cy="670" r="4"/>
+  </g>
+</svg>

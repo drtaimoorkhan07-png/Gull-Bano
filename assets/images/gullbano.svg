@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="pBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="35%" stop-color="#FDF0F4"/>
+      <stop offset="70%" stop-color="#F8C8DC"/>
+      <stop offset="100%" stop-color="#E8C5D8"/>
+    </linearGradient>
+    <radialGradient id="pAura" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#FFF2D6" stop-opacity="0.6"/>
+      <stop offset="75%" stop-color="#F8C8DC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#E8C5D8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6"/>
+      <stop offset="40%" stop-color="#F4D068"/>
+      <stop offset="75%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9C7917"/>
+    </linearGradient>
+    <linearGradient id="pRose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0F5"/>
+      <stop offset="30%" stop-color="#F8C8DC"/>
+      <stop offset="70%" stop-color="#E75480"/>
+      <stop offset="100%" stop-color="#A8325E"/>
+    </linearGradient>
+    <linearGradient id="pLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CDE0B5"/>
+      <stop offset="60%" stop-color="#A3B18A"/>
+      <stop offset="100%" stop-color="#588157"/>
+    </linearGradient>
+    <filter id="pSoftGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#pBg)" rx="32"/>
+
+  <!-- Ornate Golden Filigree Frame -->
+  <rect x="24" y="24" width="752" height="952" rx="28" fill="none" stroke="url(#pGold)" stroke-width="2.5" stroke-dasharray="10 8" opacity="0.65"/>
+  <rect x="36" y="36" width="728" height="928" rx="22" fill="none" stroke="#E75480" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Central Luminous Glow -->
+  <circle cx="400" cy="480" r="300" fill="url(#pAura)"/>
+  <circle cx="400" cy="480" r="230" fill="#FFFFFF" fill-opacity="0.65" stroke="url(#pGold)" stroke-width="2"/>
+
+  <!-- Golden Crown Tiara Above Main Flower -->
+  <g transform="translate(400, 240)">
+    <path d="M -45 25 L -30 0 L -12 15 L 0 -18 L 12 15 L 30 0 L 45 25 Z" fill="url(#pGold)"/>
+    <circle cx="0" cy="-18" r="5" fill="#FFF"/>
+    <circle cx="-30" cy="0" r="4" fill="#FFF"/>
+    <circle cx="30" cy="0" r="4" fill="#FFF"/>
+    <circle cx="0" cy="18" r="3.5" fill="#E75480"/>
+  </g>
+
+  <!-- Majestic Blooming Royal Rose Centerpiece -->
+  <g transform="translate(400, 480)" filter="url(#pSoftGlow)">
+    <!-- Outer Broad Petals (Layer 1) -->
+    <g fill="url(#pRose)" opacity="0.95">
+      <path d="M 0 0 C -70 -50 -100 -120 0 -160 C 100 -120 70 -50 0 0 Z"/>
+      <path d="M 0 0 C -130 -20 -160 -90 -85 -140 C -30 -90 -40 -30 0 0 Z" transform="rotate(51.4)"/>
+      <path d="M 0 0 C -130 -20 -160 -90 -85 -140 C -30 -90 -40 -30 0 0 Z" transform="rotate(102.8)"/>
+      <path d="M 0 0 C -130 -20 -160 -90 -85 -140 C -30 -90 -40 -30 0 0 Z" transform="rotate(154.2)"/>
+      <path d="M 0 0 C -130 -20 -160 -90 -85 -140 C -30 -90 -40 -30 0 0 Z" transform="rotate(205.6)"/>
+      <path d="M 0 0 C -130 -20 -160 -90 -85 -140 C -30 -90 -40 -30 0 0 Z" transform="rotate(257)"/>
+      <path d="M 0 0 C -130 -20 -160 -90 -85 -140 C -30 -90 -40 -30 0 0 Z" transform="rotate(308.4)"/>
+    </g>
+
+    <!-- Inner Cupped Petals (Layer 2) -->
+    <g fill="#FFFFFF" fill-opacity="0.38" transform="scale(0.72) rotate(25)">
+      <path d="M 0 0 C -60 -40 -90 -110 0 -140 C 90 -110 60 -40 0 0 Z" fill="#F8C8DC"/>
+      <path d="M 0 0 C -60 -40 -90 -110 0 -140 C 90 -110 60 -40 0 0 Z" fill="#E75480" transform="rotate(72)"/>
+      <path d="M 0 0 C -60 -40 -90 -110 0 -140 C 90 -110 60 -40 0 0 Z" fill="#F8C8DC" transform="rotate(144)"/>
+      <path d="M 0 0 C -60 -40 -90 -110 0 -140 C 90 -110 60 -40 0 0 Z" fill="#E75480" transform="rotate(216)"/>
+      <path d="M 0 0 C -60 -40 -90 -110 0 -140 C 90 -110 60 -40 0 0 Z" fill="#F8C8DC" transform="rotate(288)"/>
+    </g>
+
+    <!-- Core Heart Petals (Layer 3) -->
+    <g transform="scale(0.45) rotate(48)">
+      <circle cx="0" cy="0" r="60" fill="#A8325E"/>
+      <path d="M 0 -40 C -25 -65, -50 -30, 0 20 C 50 -30, 25 -65, 0 -40 Z" fill="#F8C8DC"/>
+    </g>
+
+    <!-- Golden Center Pistil & Dew Glints -->
+    <circle cx="0" cy="0" r="24" fill="url(#pGold)"/>
+    <circle cx="0" cy="0" r="15" fill="#FFF6DE"/>
+    <circle cx="0" cy="0" r="7" fill="#FFFFFF"/>
+
+    <!-- Lush Sage Green Leaves -->
+    <g fill="url(#pLeaf)">
+      <path d="M -130 90 C -190 70 -210 130 -140 160 C -110 130 -110 100 -130 90 Z"/>
+      <path d="M 130 90 C 190 70 210 130 140 160 C 110 130 110 100 130 90 Z"/>
+      <path d="M -150 -60 C -220 -80 -220 -10 -150 10 Z"/>
+      <path d="M 150 -60 C 220 -80 220 -10 150 10 Z"/>
+    </g>
+
+    <!-- Jasmine Star Blossoms -->
+    <g transform="translate(-170, 70)">
+      <circle cx="0" cy="0" r="18" fill="#FFFFFF"/>
+      <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+    </g>
+    <g transform="translate(170, 70)">
+      <circle cx="0" cy="0" r="18" fill="#FFFFFF"/>
+      <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+    </g>
+  </g>
+
+  <!-- Drifting Soft Petals & Golden Sparkles -->
+  <g fill="#E75480" opacity="0.65">
+    <ellipse cx="220" cy="350" rx="9" ry="16" transform="rotate(35 220 350)"/>
+    <ellipse cx="580" cy="370" rx="8" ry="15" transform="rotate(-40 580 370)"/>
+    <ellipse cx="260" cy="680" rx="9" ry="17" transform="rotate(50 260 680)"/>
+    <ellipse cx="540" cy="670" rx="8" ry="15" transform="rotate(-25 540 670)"/>
+    <ellipse cx="400" cy="780" rx="10" ry="18" transform="rotate(15 400 780)"/>
+  </g>
+  <g fill="#D4AF37" opacity="0.8">
+    <circle cx="200" cy="460" r="5"/>
+    <circle cx="600" cy="480" r="5"/>
+    <circle cx="280" cy="280" r="4"/>
+    <circle cx="520" cy="260" r="4"/>
+    <circle cx="400" cy="840" r="5"/>
+  </g>
+</svg>

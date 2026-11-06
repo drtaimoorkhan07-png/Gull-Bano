@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gull Bano – A Garden of Love</title>
+  <meta name="description" content="A romantic botanical tribute website crafted with eternal love for Gull Bano — the blooming flower of my universe.">
+  <meta name="theme-color" content="#F8C8DC">
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Gull Bano – A Garden of Love">
+  <meta property="og:description" content="A romantic botanical tribute website crafted with eternal love for Gull Bano.">
+  <meta property="og:image" content="assets/images/gullbano.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Botanical Rose Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23F8C8DC'/><path d='M50 25 C35 25 30 45 50 65 C70 45 65 25 50 25 Z' fill='%23E75480'/><circle cx='50' cy='45' r='12' fill='%23D4AF37'/></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Poppins, Dancing Script, Noto Nastaliq Urdu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master Tribute Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. PRELOADER SCREEN
+       ========================================================================= -->
+  <div class="preloader" id="preloader" aria-label="Loading Gull Bano's Garden">
+    <svg class="loader-flower-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F8C8DC"/>
+          <stop offset="100%" stop-color="#E75480"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(50, 50)">
+        <path class="loader-petal" d="M0 0 C-15 -20 -20 -35 0 -45 C20 -35 15 -20 0 0 Z" fill="url(#loaderGrad)"/>
+        <path class="loader-petal" d="M0 0 C-15 -20 -20 -35 0 -45 C20 -35 15 -20 0 0 Z" fill="url(#loaderGrad)" transform="rotate(72)"/>
+        <path class="loader-petal" d="M0 0 C-15 -20 -20 -35 0 -45 C20 -35 15 -20 0 0 Z" fill="url(#loaderGrad)" transform="rotate(144)"/>
+        <path class="loader-petal" d="M0 0 C-15 -20 -20 -35 0 -45 C20 -35 15 -20 0 0 Z" fill="url(#loaderGrad)" transform="rotate(216)"/>
+        <path class="loader-petal" d="M0 0 C-15 -20 -20 -35 0 -45 C20 -35 15 -20 0 0 Z" fill="url(#loaderGrad)" transform="rotate(288)"/>
+        <circle cx="0" cy="0" r="10" fill="#D4AF37"/>
+        <circle cx="0" cy="0" r="6" fill="#F7E7B4"/>
+      </g>
+    </svg>
+    <div class="preloader-text">Gull Bano</div>
+    <div class="preloader-subtext">The Garden is Blooming...</div>
+  </div>
+
+  <!-- Falling Petals Interactive Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- =========================================================================
+       2. NAVIGATION BAR
+       ========================================================================= -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand" aria-label="Gull Bano Tribute Home">
+        <svg class="nav-brand-icon" viewBox="0 0 24 24">
+          <path d="M12 2C13.5 6 17 8 17 11C17 14 14.5 16 12 16C9.5 16 7 14 7 11C7 8 10.5 6 12 2Z"/>
+          <path d="M12 16V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 18C14 18 16 19 17 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Gull Bano
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#story" class="nav-link">Our Story</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#qualities" class="nav-link">Her Qualities</a></li>
+        <li><a href="#letter" class="nav-link">Love Letter</a></li>
+        <li><a href="#wishes" class="nav-link">Wishes</a></li>
+        <li><a href="#counter" class="nav-link">Counter</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Day / Night Mode Toggle -->
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle Day and Night Garden mode" title="Switch Day/Night Garden">
+          <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="5" fill="currentColor"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         3. HERO SECTION – THE BLOOMING SANCTUARY
+         ======================================================================= -->
+    <section class="hero" id="home">
+      <!-- Layered Parallax Flower Illustrations -->
+      <div class="parallax-layer parallax-leaf-1" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <path d="M10 90 C20 40 60 20 90 10 C80 60 40 80 10 90 Z" fill="#A3B18A" opacity="0.7"/>
+          <path d="M10 90 Q 50 50 90 10" stroke="#588157" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div class="parallax-layer parallax-flower-1" aria-hidden="true">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="40" fill="#F8C8DC" opacity="0.6"/>
+          <circle cx="60" cy="60" r="25" fill="#E75480" opacity="0.7"/>
+          <circle cx="60" cy="60" r="10" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <div class="parallax-layer parallax-flower-2" aria-hidden="true">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="45" fill="#CDB4DB" opacity="0.5"/>
+          <circle cx="60" cy="60" r="28" fill="#A8325E" opacity="0.6"/>
+          <circle cx="60" cy="60" r="12" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <div class="parallax-layer parallax-leaf-2" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <path d="M90 90 C80 40 40 20 10 10 C20 60 60 80 90 90 Z" fill="#A3B18A" opacity="0.7"/>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-tagline">
+          <span>🌸</span>
+          <span>A Garden Dedicated to My Wife</span>
+          <span>🌸</span>
+        </div>
+
+        <h1 class="hero-title">Gull Bano</h1>
+
+        <div class="hero-subtitle-wrapper">
+          <span class="hero-subtitle" id="hero-typewriter"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
+
+        <!-- Center Interactive Blooming Rose (Easter Egg: Click to trigger petal burst!) -->
+        <div class="hero-bloom-container" id="hero-bloom-flower" title="Click to shower petals!">
+          <svg class="hero-bloom-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="heroBloomGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFF8F0"/>
+                <stop offset="40%" stop-color="#F8C8DC"/>
+                <stop offset="85%" stop-color="#E75480"/>
+                <stop offset="100%" stop-color="#A8325E"/>
+              </radialGradient>
+            </defs>
+            <g transform="translate(100, 100)">
+              <!-- Outer Blooming Petals -->
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.95"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.9" transform="rotate(45)"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.9" transform="rotate(90)"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.95" transform="rotate(135)"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.9" transform="rotate(180)"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.95" transform="rotate(225)"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.9" transform="rotate(270)"/>
+              <path d="M0 0 C-45 -30 -60 -75 0 -95 C60 -75 45 -30 0 0 Z" fill="url(#heroBloomGrad)" opacity="0.95" transform="rotate(315)"/>
+              <!-- Core Golden Center -->
+              <circle cx="0" cy="0" r="22" fill="#D4AF37"/>
+              <circle cx="0" cy="0" r="14" fill="#F7E7B4"/>
+              <circle cx="0" cy="0" r="7" fill="#FFFFFF"/>
+            </g>
+          </svg>
+          <div class="hero-bloom-hint">✨ Click to bloom ✨</div>
+        </div>
+
+        <div>
+          <a href="#about" class="btn-primary">
+            <span>Enter Her Garden</span>
+            <svg class="btn-icon-svg" viewBox="0 0 24 24">
+              <path d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. ABOUT HER SECTION
+         ======================================================================= -->
+    <section class="section" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-pretitle">The Rose in My Life</span>
+          <h2 class="section-title">About Gull Bano</h2>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24">
+              <path d="M12 2C9 7 4 10 4 14C4 18.4 7.6 22 12 22C16.4 22 20 18.4 20 14C20 10 15 7 12 2Z"/>
+            </svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Portrait with Animated Botanical Wreath & Princess of Flowers Royal Badge -->
+          <div class="about-portrait-wrapper">
+            <div class="floral-wreath-container">
+              <!-- Illustrated Lush Blooming Wreath SVG with Roses, Jasmine & Vines -->
+              <svg class="floral-wreath-svg" viewBox="0 0 540 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="wreathRoseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFF8F0"/>
+                    <stop offset="30%" stop-color="#F8C8DC"/>
+                    <stop offset="70%" stop-color="#E75480"/>
+                    <stop offset="100%" stop-color="#A8325E"/>
+                  </linearGradient>
+                  <linearGradient id="wreathGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F7E7B4"/>
+                    <stop offset="50%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#B8860B"/>
+                  </linearGradient>
+                  <linearGradient id="wreathLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#C5D3AC"/>
+                    <stop offset="50%" stop-color="#A3B18A"/>
+                    <stop offset="100%" stop-color="#588157"/>
+                  </linearGradient>
+                  <radialGradient id="bloomGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#E75480" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#E75480" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+
+                <!-- Arch Vine Ring Guides -->
+                <ellipse cx="270" cy="320" rx="245" ry="295" stroke="url(#wreathGoldGrad)" stroke-width="2.5" stroke-dasharray="10 8" opacity="0.7"/>
+                <ellipse cx="270" cy="320" rx="230" ry="280" stroke="#E75480" stroke-width="1.5" opacity="0.3"/>
+
+                <!-- Top Royal Flower Crown Cluster -->
+                <g transform="translate(270, 26)">
+                  <!-- Golden Tiara Behind Top Rose -->
+                  <path d="M -30 15 L -20 0 L -8 10 L 0 -12 L 8 10 L 20 0 L 30 15 Z" fill="url(#wreathGoldGrad)" opacity="0.9"/>
+                  <circle cx="0" cy="-12" r="3.5" fill="#FFF"/>
+                  <circle cx="-20" cy="0" r="2.5" fill="#FFF"/>
+                  <circle cx="20" cy="0" r="2.5" fill="#FFF"/>
+                  <!-- Center Blooming Crown Rose -->
+                  <circle cx="0" cy="18" r="26" fill="url(#bloomGlow)"/>
+                  <circle cx="0" cy="18" r="18" fill="url(#wreathRoseGrad)"/>
+                  <circle cx="-6" cy="14" r="8" fill="#FFF" fill-opacity="0.4"/>
+                  <circle cx="6" cy="14" r="8" fill="#FFF" fill-opacity="0.4"/>
+                  <circle cx="0" cy="22" r="8" fill="#FFF" fill-opacity="0.4"/>
+                  <circle cx="0" cy="18" r="6" fill="#D4AF37"/>
+                  <!-- Top Leaves -->
+                  <path d="M -22 18 C -45 10 -40 -5 -25 5 Z" fill="url(#wreathLeafGrad)"/>
+                  <path d="M 22 18 C 45 10 40 -5 25 5 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Left Top Rose Cluster -->
+                <g transform="translate(65, 140) scale(0.9)">
+                  <circle cx="0" cy="0" r="22" fill="url(#bloomGlow)"/>
+                  <circle cx="0" cy="0" r="16" fill="url(#wreathRoseGrad)"/>
+                  <circle cx="-4" cy="-4" r="7" fill="#FFF" fill-opacity="0.35"/>
+                  <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+                  <path d="M -8 12 C -20 25 -30 15 -18 8 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Right Top Rose Cluster -->
+                <g transform="translate(475, 140) scale(0.9)">
+                  <circle cx="0" cy="0" r="22" fill="url(#bloomGlow)"/>
+                  <circle cx="0" cy="0" r="16" fill="url(#wreathRoseGrad)"/>
+                  <circle cx="4" cy="-4" r="7" fill="#FFF" fill-opacity="0.35"/>
+                  <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+                  <path d="M 8 12 C 20 25 30 15 18 8 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Left Mid Flower Cluster (White Star Jasmine & Lavender) -->
+                <g transform="translate(22, 330)">
+                  <circle cx="0" cy="0" r="14" fill="#CDB4DB" opacity="0.8"/>
+                  <!-- Star Petals -->
+                  <path d="M 0 -12 L 3 -3 L 12 0 L 3 3 L 0 12 L -3 3 L -12 0 L -3 -3 Z" fill="#FFFFFF"/>
+                  <circle cx="0" cy="0" r="3" fill="#D4AF37"/>
+                  <path d="M 0 12 C -10 24 0 32 8 20 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Right Mid Flower Cluster (White Star Jasmine & Lavender) -->
+                <g transform="translate(518, 330)">
+                  <circle cx="0" cy="0" r="14" fill="#CDB4DB" opacity="0.8"/>
+                  <path d="M 0 -12 L 3 -3 L 12 0 L 3 3 L 0 12 L -3 3 L -12 0 L -3 -3 Z" fill="#FFFFFF"/>
+                  <circle cx="0" cy="0" r="3" fill="#D4AF37"/>
+                  <path d="M 0 12 C 10 24 0 32 -8 20 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Left Bottom Rose Cluster -->
+                <g transform="translate(75, 490) scale(0.95)">
+                  <circle cx="0" cy="0" r="24" fill="url(#bloomGlow)"/>
+                  <circle cx="0" cy="0" r="17" fill="url(#wreathRoseGrad)"/>
+                  <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+                  <path d="M -8 -10 C -25 -20 -15 -35 -2 -18 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Right Bottom Rose Cluster -->
+                <g transform="translate(465, 490) scale(0.95)">
+                  <circle cx="0" cy="0" r="24" fill="url(#bloomGlow)"/>
+                  <circle cx="0" cy="0" r="17" fill="url(#wreathRoseGrad)"/>
+                  <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+                  <path d="M 8 -10 C 25 -20 15 -35 2 -18 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+
+                <!-- Bottom Center Golden Flourish -->
+                <g transform="translate(270, 615)">
+                  <circle cx="0" cy="0" r="20" fill="url(#bloomGlow)"/>
+                  <circle cx="0" cy="0" r="15" fill="url(#wreathGoldGrad)"/>
+                  <circle cx="0" cy="0" r="8" fill="#FFF"/>
+                  <path d="M -15 0 C -35 8 -25 -15 -8 -5 Z" fill="url(#wreathLeafGrad)"/>
+                  <path d="M 15 0 C 35 8 25 -15 8 -5 Z" fill="url(#wreathLeafGrad)"/>
+                </g>
+              </svg>
+
+              <!-- Arch Framed Portrait Card -->
+              <div class="portrait-card">
+                <!-- Replace 'assets/images/gullbano.jpg' with your favorite portrait of her -->
+                <img src="assets/images/gullbano.jpg" alt="Portrait of Gull Bano" class="portrait-img" onerror="this.src='assets/images/gullbano.svg'">
+
+                <!-- Luxury Princess of Flowers Royal Badge with Flowers & Gold Filigree -->
+                <div class="portrait-badge" title="Gull Bano: Princess of Flowers">
+                  <span class="badge-flower-bloom left-flower" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="badge-mini-rose">
+                      <circle cx="12" cy="12" r="10" fill="#F8C8DC"/>
+                      <path d="M12 4 C8 4 5 8 5 12 C5 17 9 20 12 21 C15 20 19 17 19 12 C19 8 16 4 12 4 Z" fill="#E75480"/>
+                      <circle cx="12" cy="12" r="3.5" fill="#D4AF37"/>
+                    </svg>
+                  </span>
+                  <div class="badge-content">
+                    <div class="badge-crown-row">
+                      <svg class="badge-tiara-svg" viewBox="0 0 24 24">
+                        <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V17H19V19Z" fill="#D4AF37"/>
+                      </svg>
+                    </div>
+                    <span class="badge-text-primary">Princess of Flowers</span>
+                    <span class="badge-text-urdu">گُل بانو • Floral Royalty</span>
+                  </div>
+                  <span class="badge-flower-bloom right-flower" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="badge-mini-rose">
+                      <circle cx="12" cy="12" r="10" fill="#F8C8DC"/>
+                      <path d="M12 4 C8 4 5 8 5 12 C5 17 9 20 12 21 C15 20 19 17 19 12 C19 8 16 4 12 4 Z" fill="#E75480"/>
+                      <circle cx="12" cy="12" r="3.5" fill="#D4AF37"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Narrative & Botanical Highlight Cards -->
+          <div class="about-content">
+            <blockquote class="about-quote">
+              "Your name means 'flower', yet you are more than a single bloom — you are the whole garden, breathing gentle fragrance, light, and warmth into every corner of my soul."
+            </blockquote>
+
+            <p class="about-p">
+              Gull Bano brings a grace that words can scarcely capture. Every smile of hers is like morning dew catching golden sunrise light, comforting, serene, and infinitely precious. In a chaotic world, she is my sanctuary of peace.
+            </p>
+
+            <p class="about-p">
+              This tribute is a living token of gratitude for the laughter we share, the quiet conversations over tea, and the pure joy she blossoms into our home every single day.
+            </p>
+
+            <!-- Highlights / Facts Grid -->
+            <div class="facts-grid">
+              <div class="fact-card">
+                <div class="fact-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8 6 3 9 3 13C3 18 7 22 12 22C17 22 21 18 21 13C21 9 16 6 12 2Z"/></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Name Meaning</span>
+                  <span class="fact-val">Flower Queen / Rose Lady (گل بانو)</span>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Favorite Flower</span>
+                  <span class="fact-val">Wild Jasmine & Blushing Peonies</span>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Favorite Colors</span>
+                  <span class="fact-val">Blush Pink & Lilac Gold</span>
+                </div>
+              </div>
+
+              <div class="fact-card">
+                <div class="fact-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Her Superpower</span>
+                  <span class="fact-val">Bringing Peace to My Soul</span>
+                </div>
+              </div>
+
+              <!-- REPLACEABLE: Her Favorite Food / Treats -->
+              <div class="fact-card">
+                <div class="fact-icon">
+                  <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-8-15.03 0h15.03zM1.02 17h15v2h-15z"/></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Favorite Food</span>
+                  <span class="fact-val">Kashmiri Chai &amp; Homemade Biryani</span>
+                </div>
+              </div>
+
+              <!-- REPLACEABLE: Her Favorite Habit / Season -->
+              <div class="fact-card">
+                <div class="fact-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14.5v-3.5h3.5v-2H13V7.5h-2V11H7.5v2H11v3.5h2z"/></svg>
+                </div>
+                <div class="fact-info">
+                  <span class="fact-label">Favorite Season</span>
+                  <span class="fact-val">Spring Bloom &amp; Rain Showers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. OUR STORY (TIMELINE)
+         ======================================================================= -->
+    <section class="section" id="story">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-pretitle">The Journey of Two Souls</span>
+          <h2 class="section-title">Our Story</h2>
+          <p class="section-desc">Every moment with you is a petal gently placed upon the tapestry of eternity.</p>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/></svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <!-- Milestone 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date">The Beginning • Day We Met</span>
+              <h3 class="timeline-title">When Our Paths Crossed</h3>
+              <p class="timeline-desc">
+                The day the universe whispered that my life was about to change forever. One gentle look, a quiet smile, and suddenly all the scattered pieces of my world fell into perfect harmony.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date">The Sacred Vow • Our Wedding</span>
+              <h3 class="timeline-title">Two Hearts, One Soul</h3>
+              <p class="timeline-desc">
+                Dressed in radiant beauty, you took my hand and promised to walk life's winding garden together. It was the happiest day of my existence — the beginning of forever.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date">A Precious Memory • Quiet Magic</span>
+              <h3 class="timeline-title">Laughter Under the Stars</h3>
+              <p class="timeline-desc">
+                From cozy evening cups of chai to midnight conversations where we talked about our dreams, every small ordinary moment becomes extraordinary simply because you are by my side.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-date">Today & Into Eternity</span>
+              <h3 class="timeline-title">Growing Deeper Each Day</h3>
+              <p class="timeline-desc">
+                True love doesn't just stay the same; it blooms wider, roots deeper, and stands stronger through every season. I love you more today than yesterday, and far less than tomorrow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. GALLERY
+         ======================================================================= -->
+    <section class="section" id="gallery">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-pretitle">Capturing Her Radiance</span>
+          <h2 class="section-title">A Garden of Memories</h2>
+          <p class="section-desc">Click any photograph to view in full bloom.</p>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Gallery Card 1 -->
+          <div class="gallery-card" tabindex="0" role="button" aria-label="View photo: Her Radiant Smile">
+            <img src="assets/images/gallery-1.jpg" alt="Her Radiant Smile" class="gallery-img" onerror="this.src='assets/images/gallery-1.svg'">
+            <div class="gallery-overlay">
+              <svg class="gallery-frame-svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="10"/></svg>
+              <div class="gallery-caption-box">
+                <h3 class="gallery-caption-title">Her Radiant Smile</h3>
+                <span class="gallery-caption-sub">Pure joy in a single glance 🌸</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Card 2 -->
+          <div class="gallery-card" tabindex="0" role="button" aria-label="View photo: Golden Sunset Walk">
+            <img src="assets/images/gallery-2.jpg" alt="Golden Sunset Walk" class="gallery-img" onerror="this.src='assets/images/gallery-2.svg'">
+            <div class="gallery-overlay">
+              <svg class="gallery-frame-svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="10"/></svg>
+              <div class="gallery-caption-box">
+                <h3 class="gallery-caption-title">Golden Sunset Walk</h3>
+                <span class="gallery-caption-sub">Hand in hand through every horizon ✨</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Card 3 -->
+          <div class="gallery-card" tabindex="0" role="button" aria-label="View photo: Floral Elegance">
+            <img src="assets/images/gallery-3.jpg" alt="Floral Elegance" class="gallery-img" onerror="this.src='assets/images/gallery-3.svg'">
+            <div class="gallery-overlay">
+              <svg class="gallery-frame-svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="10"/></svg>
+              <div class="gallery-caption-box">
+                <h3 class="gallery-caption-title">Floral Elegance</h3>
+                <span class="gallery-caption-sub">Grace in every step she takes 🌷</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Card 4 -->
+          <div class="gallery-card" tabindex="0" role="button" aria-label="View photo: Our Wedding Day">
+            <img src="assets/images/gallery-4.jpg" alt="Our Wedding Day" class="gallery-img" onerror="this.src='assets/images/gallery-4.svg'">
+            <div class="gallery-overlay">
+              <svg class="gallery-frame-svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="10"/></svg>
+              <div class="gallery-caption-box">
+                <h3 class="gallery-caption-title">Our Wedding Day</h3>
+                <span class="gallery-caption-sub">The sacred beginning of forever 💍</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Card 5 -->
+          <div class="gallery-card" tabindex="0" role="button" aria-label="View photo: Morning Chai & Laughter">
+            <img src="assets/images/gallery-5.jpg" alt="Morning Chai & Laughter" class="gallery-img" onerror="this.src='assets/images/gallery-5.svg'">
+            <div class="gallery-overlay">
+              <svg class="gallery-frame-svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="10"/></svg>
+              <div class="gallery-caption-box">
+                <h3 class="gallery-caption-title">Morning Chai &amp; Laughter</h3>
+                <span class="gallery-caption-sub">Warm tea, sweet smiles &amp; quiet joy ☕🌸</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Card 6 -->
+          <div class="gallery-card" tabindex="0" role="button" aria-label="View photo: Under the Cherry Blossoms">
+            <img src="assets/images/gallery-6.jpg" alt="Under the Cherry Blossoms" class="gallery-img" onerror="this.src='assets/images/gallery-6.svg'">
+            <div class="gallery-overlay">
+              <svg class="gallery-frame-svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="10"/></svg>
+              <div class="gallery-caption-box">
+                <h3 class="gallery-caption-title">Under the Cherry Blossoms</h3>
+                <span class="gallery-caption-sub">Dreaming of all our tomorrows 🌸</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal Viewer -->
+    <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="lightbox-btn lightbox-close" id="lightbox-close" aria-label="Close Lightbox">✕</button>
+      <button class="lightbox-btn lightbox-prev" id="lightbox-prev" aria-label="Previous Image">‹</button>
+      <button class="lightbox-btn lightbox-next" id="lightbox-next" aria-label="Next Image">›</button>
+      
+      <div class="lightbox-content-box">
+        <img src="" alt="" class="lightbox-img" id="lightbox-img">
+        <div class="lightbox-caption-bar">
+          <h4 class="lightbox-title" id="lightbox-title"></h4>
+          <p class="lightbox-count" id="lightbox-count"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         7. WHY I LOVE YOU / HER QUALITIES (3D FLIP-CARDS)
+         ======================================================================= -->
+    <section class="section" id="qualities">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-pretitle">The Petals of Her Heart</span>
+          <h2 class="section-title">Why I Love You</h2>
+          <p class="section-desc">Hover or click any card to reveal what makes your heart so extraordinary.</p>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="qualities-grid">
+          <!-- Quality 1: Kindness (Lotus) -->
+          <div class="quality-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="card-face card-front">
+              <div class="quality-flower-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3C8 8 3 11 3 15C3 19 7 22 12 22C17 22 21 19 21 15C21 11 16 8 12 3Z"/></svg>
+              </div>
+              <h3 class="quality-title">Kindness</h3>
+              <span class="quality-flower-name">The Lotus • Gentle Purity</span>
+              <span class="flip-hint">Tap to flip 🌸</span>
+            </div>
+            <div class="card-face card-back">
+              <svg class="card-back-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <p class="quality-desc">
+                Your heart never hesitates to comfort others. Your kindness is a gentle spring that touches everyone who enters your presence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality 2: Patience (Lavender) -->
+          <div class="quality-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="card-face card-front">
+              <div class="quality-flower-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+              </div>
+              <h3 class="quality-title">Patience</h3>
+              <span class="quality-flower-name">The Lavender • Calming Breeze</span>
+              <span class="flip-hint">Tap to flip 🌸</span>
+            </div>
+            <div class="card-face card-back">
+              <svg class="card-back-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.93V18a1 1 0 0 1-2 0v-1.07A8 8 0 0 1 4.07 10H3a1 1 0 0 1 0-2h1.07A8 8 0 0 1 11 2.07V1a1 1 0 0 1 2 0v1.07A8 8 0 0 1 19.93 9H21a1 1 0 0 1 0 2h-1.07A8 8 0 0 1 13 16.93z"/></svg>
+              <p class="quality-desc">
+                When life feels rushed or stormy, your quiet patience anchors me. You bring peace where there is worry, and certainty where there is doubt.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality 3: Beauty (Rose) -->
+          <div class="quality-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="card-face card-front">
+              <div class="quality-flower-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.5 6 3 10 3 14C3 18.5 7 22 12 22C17 22 21 18.5 21 14C21 10 17.5 6 12 2Z"/></svg>
+              </div>
+              <h3 class="quality-title">Beauty</h3>
+              <span class="quality-flower-name">The Rose • Grace & Elegance</span>
+              <span class="flip-hint">Tap to flip 🌸</span>
+            </div>
+            <div class="card-face card-back">
+              <svg class="card-back-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <p class="quality-desc">
+                Breathtaking on the outside, but your true beauty radiates from within — in your pure intentions, gentle voice, and luminous soul.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality 4: Strength (Orchid) -->
+          <div class="quality-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="card-face card-front">
+              <div class="quality-flower-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+              </div>
+              <h3 class="quality-title">Strength</h3>
+              <span class="quality-flower-name">The Orchid • Silent Resilience</span>
+              <span class="flip-hint">Tap to flip 🌸</span>
+            </div>
+            <div class="card-face card-back">
+              <svg class="card-back-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              <p class="quality-desc">
+                Behind your gentle delicacy lies an unbreakable strength and wisdom. You inspire me every day to be the best version of myself.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality 5: Love (Cherry Blossom) -->
+          <div class="quality-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="card-face card-front">
+              <div class="quality-flower-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </div>
+              <h3 class="quality-title">Love</h3>
+              <span class="quality-flower-name">Cherry Blossom • Pure Affection</span>
+              <span class="flip-hint">Tap to flip 🌸</span>
+            </div>
+            <div class="card-face card-back">
+              <svg class="card-back-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+              <p class="quality-desc">
+                Your love is the safest place I have ever known. Unconditional, warm, and true — the greatest gift I could ever ask from life.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality 6: Care (Jasmine) -->
+          <div class="quality-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="card-face card-front">
+              <div class="quality-flower-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5c0 2.76-2.24 5-5 5s-5-2.24-5-5a5 5 0 0 1 5-5zm0 12c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"/></svg>
+              </div>
+              <h3 class="quality-title">Care</h3>
+              <span class="quality-flower-name">Wild Jasmine • Sweet Devotion</span>
+              <span class="flip-hint">Tap to flip 🌸</span>
+            </div>
+            <div class="card-face card-back">
+              <svg class="card-back-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <p class="quality-desc">
+                In the little things you notice, the warm meals, the caring inquiries when I am tired — your thoughtfulness fills every single day with gratitude.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. LOVE LETTER (INTERACTIVE WAX-SEAL ENVELOPE)
+         ======================================================================= -->
+    <section class="section" id="letter">
+      <div class="section-container letter-section-container">
+        <div class="section-header">
+          <span class="section-pretitle">From My Heart to Yours</span>
+          <h2 class="section-title">A Love Letter to Gull Bano</h2>
+          <p class="section-desc">Click the wax seal to open the letter handwritten for you.</p>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="envelope-wrapper">
+          <!-- Interactive Envelope -->
+          <div class="envelope" id="letter-envelope" role="button" tabindex="0" aria-label="Open Love Letter">
+            <div class="envelope-flap-top" id="envelope-flap-top"></div>
+            <div class="envelope-flap-left"></div>
+            <div class="envelope-flap-right"></div>
+            <div class="envelope-flap-bottom"></div>
+
+            <!-- Wax Seal Heart -->
+            <div class="wax-seal" id="wax-seal" title="Break the seal & read">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+
+            <div class="envelope-click-prompt">💌 Click to Open 💌</div>
+          </div>
+
+          <!-- Unfolded Handwritten Letter -->
+          <div class="letter-paper" id="letter-paper">
+            <div class="letter-header">
+              <svg class="letter-flower-crest" viewBox="0 0 24 24">
+                <path d="M12 2C8 6 3 9 3 13C3 18 7 22 12 22C17 22 21 18 21 13C21 9 16 6 12 2Z"/>
+              </svg>
+              <h3 class="letter-salutation">My Dearest Gull Bano,</h3>
+            </div>
+
+            <div class="letter-body">
+              <p>
+                If every flower in the world opened its petals to sing of beauty, none would match the tenderness of your heart. Before you came into my life, the garden of my days was quiet and waiting. You arrived with your warmth, your laughter, and your gentle soul, and suddenly everything blossomed into full color.
+              </p>
+              <p>
+                I want to thank you for simply being you. For your patient understanding when times are challenging, for your radiant joy during our sweetest triumphs, and for the thousand unseen ways you make our home a sanctuary of unconditional peace.
+              </p>
+              <p>
+                My promise to you is simple and eternal: I will stand beside you through every season, cherish every petal of your happiness, protect your dreams, and love you more deeply with every passing sunrise.
+              </p>
+            </div>
+
+            <div class="letter-signature">
+              Forever & Always Yours, <br>
+              <span style="font-size: 1.8rem; color: var(--gold);">With All My Love ❤️</span>
+            </div>
+
+            <button class="letter-close-btn" id="letter-close-btn">Fold Letter Away</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. WISHES / DUA SECTION (BILINGUAL ENGLISH + URDU)
+         ======================================================================= -->
+    <section class="section" id="wishes">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-pretitle">Sacred Prayers for Her</span>
+          <h2 class="section-title">Wishes & Dua for Gull Bano</h2>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24"><path d="M12 2L15 8H21L16 12L18 18L12 14L6 18L8 12L3 8H9L12 2Z"/></svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="dua-frame">
+          <svg class="dua-crest" viewBox="0 0 24 24">
+            <path d="M12 2C9 7 4 10 4 14C4 18.4 7.6 22 12 22C16.4 22 20 18.4 20 14C20 10 15 7 12 2Z"/>
+          </svg>
+
+          <!-- Authentic Quranic Dua for Couples in Arabic Calligraphy -->
+          <div class="dua-arabic" lang="ar" dir="rtl">
+            رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا
+          </div>
+
+          <!-- Urdu Heartfelt Dua -->
+          <div class="dua-urdu" lang="ur" dir="rtl">
+            یا اللہ! میری پیاری گُل بانو کو ہمیشہ سلامت، شاد اور مسکراتا رکھنا۔ اس کی زندگی میں صحت، سکون اور بے شمار خوشیاں عطا فرما۔ آمین
+          </div>
+
+          <p class="dua-english">
+            "May the Almighty shower your days with abundant peace, luminous health, and unfading blooming joy. May every quiet wish of your heart be fulfilled, and may our love remain an eternal light in this world and the hereafter."
+          </p>
+
+          <div class="dua-amen">Ameen Summa Ameen 🤲🌸</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         10. SPECIAL COUNTER (DAYS TOGETHER + ANNIVERSARY COUNTDOWN)
+         ======================================================================= -->
+    <section class="section" id="counter">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-pretitle">Every Second Counts</span>
+          <h2 class="section-title">Cherishing Our Time</h2>
+          <p class="section-desc">A live tally of every blessed day, hour, and heartbeat shared together.</p>
+          <div class="floral-divider">
+            <div class="floral-divider-line"></div>
+            <svg class="floral-divider-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+            <div class="floral-divider-line"></div>
+          </div>
+        </div>
+
+        <div class="counters-grid">
+          <!-- Counter 1: Days We've Been Together -->
+          <div class="counter-box">
+            <svg class="counter-icon" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <h3 class="counter-header-title">Days We've Been Together</h3>
+            <p class="counter-header-sub">Since our journey began</p>
+            
+            <div class="digits-row">
+              <div class="digit-card">
+                <span class="digit-num" id="count-years">00</span>
+                <span class="digit-unit">Years</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="count-days">00</span>
+                <span class="digit-unit">Days</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="count-hours">00</span>
+                <span class="digit-unit">Hours</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="count-mins">00</span>
+                <span class="digit-unit">Mins</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="count-secs">00</span>
+                <span class="digit-unit">Secs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Counter 2: Countdown to Next Celebration -->
+          <div class="counter-box">
+            <svg class="counter-icon" viewBox="0 0 24 24">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+            </svg>
+            <h3 class="counter-header-title">Next Celebration Countdown</h3>
+            <p class="counter-header-sub">Counting down to our special milestone</p>
+            
+            <div class="digits-row">
+              <div class="digit-card">
+                <span class="digit-num" id="cd-days">00</span>
+                <span class="digit-unit">Days</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="cd-hours">00</span>
+                <span class="digit-unit">Hours</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="cd-mins">00</span>
+                <span class="digit-unit">Mins</span>
+              </div>
+              <div class="digit-card">
+                <span class="digit-num" id="cd-secs">00</span>
+                <span class="digit-unit">Secs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       11. FOOTER & CELEBRATION PETAL BURST
+       ========================================================================= -->
+  <footer class="footer" id="contact">
+    <svg class="footer-floral-crest" viewBox="0 0 24 24">
+      <path d="M12 2C8 6 3 9 3 13C3 18 7 22 12 22C17 22 21 18 21 13C21 9 16 6 12 2Z"/>
+    </svg>
+
+    <div class="footer-quote">Forever Yours ❤️</div>
+    <p class="footer-text">
+      "You are the flower that never fades, the melody that never ends, and the greatest love of my life."
+    </p>
+
+    <!-- Interactive Heart Celebration Button -->
+    <div>
+      <button class="btn-send-love" id="btn-send-love" title="Click to shower Gull Bano with endless love & petals!">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span>Send Love to Gull Bano</span>
+        <span class="love-count-badge" id="love-count">1,000</span>
+      </button>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Made with eternal love for Gull Bano</div>
+      <div>Designed with <span class="footer-heart">♥</span> and flowers • Always & Forever</div>
+    </div>
+  </footer>
+
+  <!-- Floating Ambient Music Control (Plays mp3 OR Web Audio Harp Synthesizer) -->
+  <div class="floating-audio-control" id="audio-toggle" role="button" tabindex="0" title="Play / Pause Ambient Garden Music">
+    <div class="audio-icon-disc">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+    </div>
+    <span class="audio-status-label" id="audio-status">Play Music</span>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top of Garden" title="Scroll to top">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+  </button>
+
+  <!-- Optional GSAP & ScrollTrigger via CDN for silky smooth scroll effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Vanilla JS Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

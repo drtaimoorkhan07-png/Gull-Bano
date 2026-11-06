@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="g4Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="45%" stop-color="#FDF0F4"/>
+      <stop offset="100%" stop-color="#F9DDE5"/>
+    </linearGradient>
+    <linearGradient id="g4Gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6"/>
+      <stop offset="35%" stop-color="#F4D068"/>
+      <stop offset="70%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9C7917"/>
+    </linearGradient>
+    <radialGradient id="g4Cushion" cx="45%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#E83D6F"/>
+      <stop offset="50%" stop-color="#A81D4A"/>
+      <stop offset="100%" stop-color="#5E0B25"/>
+    </radialGradient>
+    <linearGradient id="g4Diamond" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E0F7FA"/>
+      <stop offset="100%" stop-color="#B2EBF2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#g4Bg)" rx="32"/>
+  <rect x="24" y="24" width="752" height="952" rx="24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.4" stroke-dasharray="8 6"/>
+
+  <!-- Ornate Golden Sacred Wedding Arch -->
+  <path d="M 120 780 C 120 300, 200 160, 400 160 C 600 160, 680 300, 680 780" fill="none" stroke="url(#g4Gold)" stroke-width="4"/>
+  <path d="M 140 780 C 140 330, 220 200, 400 200 C 580 200, 660 330, 660 780" fill="none" stroke="#E75480" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/>
+
+  <!-- Blooming Floral Clusters on Wedding Arch -->
+  <!-- Top Center Arch Flowers -->
+  <g transform="translate(400, 160)">
+    <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#D4AF37" stroke-width="2"/>
+    <circle cx="0" cy="0" r="22" fill="#F8C8DC"/>
+    <circle cx="0" cy="0" r="10" fill="#D4AF37"/>
+    <circle cx="-38" cy="8" r="20" fill="#FFFFFF"/>
+    <circle cx="38" cy="8" r="20" fill="#FFFFFF"/>
+    <path d="M -55 20 C -80 10 -70 -10 -50 0 Z" fill="#A3B18A"/>
+    <path d="M 55 20 C 80 10 70 -10 50 0 Z" fill="#A3B18A"/>
+  </g>
+  <!-- Left Side Flowers -->
+  <g transform="translate(170, 360) scale(0.9)">
+    <circle cx="0" cy="0" r="26" fill="#F8C8DC"/>
+    <circle cx="0" cy="0" r="18" fill="#E75480"/>
+    <circle cx="0" cy="0" r="8" fill="#D4AF37"/>
+  </g>
+  <!-- Right Side Flowers -->
+  <g transform="translate(630, 360) scale(0.9)">
+    <circle cx="0" cy="0" r="26" fill="#F8C8DC"/>
+    <circle cx="0" cy="0" r="18" fill="#E75480"/>
+    <circle cx="0" cy="0" r="8" fill="#D4AF37"/>
+  </g>
+
+  <!-- Luxury Crimson Velvet Ring Cushion -->
+  <g transform="translate(400, 560)">
+    <!-- Shadow -->
+    <ellipse cx="0" cy="120" rx="200" ry="40" fill="#3D1F2E" opacity="0.25"/>
+
+    <!-- Cushion Body -->
+    <rect x="-170" y="-30" width="340" height="130" rx="36" fill="url(#g4Cushion)" stroke="url(#g4Gold)" stroke-width="3"/>
+    <!-- Tufting buttons & folds -->
+    <ellipse cx="0" cy="35" rx="15" ry="10" fill="#3A0515"/>
+    <circle cx="0" cy="35" r="4" fill="#D4AF37"/>
+    <line x1="-150" y1="0" x2="0" y2="35" stroke="#7A1032" stroke-width="2"/>
+    <line x1="150" y1="0" x2="0" y2="35" stroke="#7A1032" stroke-width="2"/>
+    <line x1="-130" y1="90" x2="0" y2="35" stroke="#7A1032" stroke-width="2"/>
+    <line x1="130" y1="90" x2="0" y2="35" stroke="#7A1032" stroke-width="2"/>
+
+    <!-- Golden Tassels at Corners -->
+    <circle cx="-165" cy="95" r="8" fill="url(#g4Gold)"/>
+    <circle cx="165" cy="95" r="8" fill="url(#g4Gold)"/>
+
+    <!-- Two Entwined Golden Wedding Rings -->
+    <!-- Groom's Ring (Slightly larger, polished gold) -->
+    <g transform="translate(-35, -25) rotate(-15)">
+      <ellipse cx="0" cy="0" rx="55" ry="32" fill="none" stroke="url(#g4Gold)" stroke-width="16"/>
+      <ellipse cx="0" cy="0" rx="55" ry="32" fill="none" stroke="#FFF7DE" stroke-width="4"/>
+    </g>
+
+    <!-- Bride's Ring with Sparkling Solitaire Diamond -->
+    <g transform="translate(35, -35) rotate(18)">
+      <ellipse cx="0" cy="0" rx="50" ry="28" fill="none" stroke="url(#g4Gold)" stroke-width="14"/>
+      <ellipse cx="0" cy="0" rx="50" ry="28" fill="none" stroke="#FFF7DE" stroke-width="3"/>
+
+      <!-- Solitaire Diamond on Top -->
+      <g transform="translate(0, -28)">
+        <!-- Diamond Crown Mount -->
+        <path d="M -12 6 L 12 6 L 8 14 L -8 14 Z" fill="url(#g4Gold)"/>
+        <!-- Multi-facet Diamond Gem -->
+        <polygon points="0,-18 16,-8 10,6 -10,6 -16,-8" fill="url(#g4Diamond)" stroke="#B2EBF2" stroke-width="1.5"/>
+        <polygon points="0,-18 7,-8 0,6 -7,-8" fill="#FFFFFF" opacity="0.9"/>
+        <!-- Star Sparkle Glint -->
+        <path d="M -22 -22 Q -12 -22 -12 -32 Q -12 -22 -2 -22 Q -12 -22 -12 -12 Q -12 -22 -22 -22 Z" fill="#FFFFFF"/>
+      </g>
+    </g>
+  </g>
+</svg>
